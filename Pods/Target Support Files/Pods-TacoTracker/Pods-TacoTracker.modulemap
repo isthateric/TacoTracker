@@ -1,0 +1,6 @@
+framework module Pods_TacoTracker {
+  umbrella header "Pods-TacoTracker-umbrella.h"
+
+  export *
+  module * { export * }
+}

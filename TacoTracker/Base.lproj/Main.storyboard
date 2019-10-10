@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ddd-pW-iuy">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TacoTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yjw-4X-Xi0">
+                                <rect key="frame" x="0.0" y="52" width="375" height="571"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="bLS-3d-9gm"/>
+                                </connections>
+                            </mapView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HRL-Ld-Xcu">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" id="B8b-kA-Igu">
+                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="1Nz-Gm-0Eb">
+                                            <rect key="frame" x="16" y="6" width="343" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Standard"/>
+                                                <segment title="Hybrid"/>
+                                                <segment title="Satellite"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="mapTypeWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="iKB-Qi-CfT"/>
+                                            </connections>
+                                        </segmentedControl>
+                                        <connections>
+                                            <action selector="mapType:" destination="BYZ-38-t0r" id="qVc-3e-1Q5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="e9f70459fc4462131316b495865cd4f8-taco-icon-cartoon-by-vexels.png" translatesAutoresizingMaskIntoConstraints="NO" id="TZ6-86-D70">
+                                <rect key="frame" x="0.0" y="52" width="95" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="tP5-c0-eR3"/>
+                                    <constraint firstAttribute="height" constant="83" id="uA0-Jk-e3i"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Yjw-4X-Xi0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="6FT-jh-xfd"/>
+                            <constraint firstItem="Yjw-4X-Xi0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ben-Qh-Jjt"/>
+                            <constraint firstItem="TZ6-86-D70" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CMG-RQ-K8f"/>
+                            <constraint firstItem="HRL-Ld-Xcu" firstAttribute="leading" secondItem="Yjw-4X-Xi0" secondAttribute="leading" id="R7k-nt-X3g"/>
+                            <constraint firstItem="HRL-Ld-Xcu" firstAttribute="top" secondItem="Yjw-4X-Xi0" secondAttribute="bottom" id="fiV-TJ-HYw"/>
+                            <constraint firstItem="Yjw-4X-Xi0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="utP-iI-XKl"/>
+                            <constraint firstItem="TZ6-86-D70" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="v5E-Du-SKg"/>
+                            <constraint firstItem="HRL-Ld-Xcu" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="wHm-f2-xQL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aJa-Ly-eHS">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="DMv-ne-Wfl">
+                            <rect key="frame" x="87" y="6" width="201" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Maps"/>
+                                <segment title="Google Maps"/>
+                            </segments>
+                            <connections>
+                                <action selector="mapSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="1HT-c9-yeU"/>
+                            </connections>
+                        </segmentedControl>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="87h-6l-fTQ">
+                            <connections>
+                                <action selector="searchButton:" destination="BYZ-38-t0r" id="rpy-xY-KV2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="Yjw-4X-Xi0" id="hFL-de-6aw"/>
+                        <outlet property="tacoLogo" destination="TZ6-86-D70" id="E9L-C6-U5V"/>
+                        <segue destination="27K-EN-gC0" kind="show" identifier="webIntro" id="ros-fR-5eI"/>
+                        <segue destination="vK0-Fx-bKn" kind="show" identifier="Maps" id="uUV-te-l0y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="132.68365817091455"/>
+        </scene>
+        <!--Google Maps-->
+        <scene sceneID="jUx-Aq-b3P">
+            <objects>
+                <viewController id="xVT-mz-9rj" customClass="GoogleMaps" customModule="TacoTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cMG-my-7gD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="2o0-wU-9Fg"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Oyd-H1-2ST">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aLt-EP-hr0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationItem id="CYJ-MU-6P8">
+                    <nil key="title"/>
+                </navigationItem>
+            </objects>
+            <point key="canvasLocation" x="2972" y="-184.85757121439281"/>
+        </scene>
+        <!--Wk View-->
+        <scene sceneID="gLZ-1t-0Q4">
+            <objects>
+                <viewController id="27K-EN-gC0" customClass="WkView" customModule="TacoTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ztb-ny-muL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vmj-lT-7bg">
+                                <rect key="frame" x="0.0" y="52" width="375" height="615"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Vmj-lT-7bg" firstAttribute="leading" secondItem="ehy-wD-bmm" secondAttribute="leading" id="93L-K2-RdZ"/>
+                            <constraint firstItem="Vmj-lT-7bg" firstAttribute="top" secondItem="ehy-wD-bmm" secondAttribute="top" constant="8" id="NS0-7R-fgb"/>
+                            <constraint firstItem="Vmj-lT-7bg" firstAttribute="bottom" secondItem="ehy-wD-bmm" secondAttribute="bottom" id="bK2-dh-3Pr"/>
+                            <constraint firstItem="Vmj-lT-7bg" firstAttribute="trailing" secondItem="ehy-wD-bmm" secondAttribute="trailing" id="sZs-NB-uPN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ehy-wD-bmm"/>
+                    </view>
+                    <connections>
+                        <outlet property="wkView" destination="Vmj-lT-7bg" id="FgF-iD-CmL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HfD-fV-OAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2034" y="499"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1MV-dK-kPC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ddd-pW-iuy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rmz-Lm-bv6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ZXW-k3-poS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1n4-J0-iWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Dud-51-3b7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vK0-Fx-bKn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="O7v-dJ-SLZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xVT-mz-9rj" kind="relationship" relationship="rootViewController" id="l6g-ck-NP6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HgS-Vb-dv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2032.8" y="-184.85757121439281"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="e9f70459fc4462131316b495865cd4f8-taco-icon-cartoon-by-vexels.png" width="512" height="512"/>
+    </resources>
+</document>
